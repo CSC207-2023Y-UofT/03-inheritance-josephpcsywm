@@ -30,3 +30,50 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+public class CrossbodyBag extends Bag{
+    private final int numberOfStraps;
+    /**
+     * Creates a new CrossbodyBag with the given color and
+     * capacity.
+     *
+     * @param color color for CrossbodyBag
+     * @param capacity capacity for CrossbodyBag
+     * @param numberOfStraps number of straps for CrossbodyBag
+     */
+    public CrossbodyBag(String color, int capacity, int numberOfStraps) {
+        /*
+         * This is how we call the parent's constructor
+         * The Python equivalent is super().__init__(...)
+         */
+        super(color, capacity);
+        this.numberOfStraps = numberOfStraps;
+    }
+
+    public int getNumberOfStraps() {
+        return numberOfStraps;
+    }
+
+    /**
+     * Return the details of this CrossbodyBag.
+     * This method requires you to have created the private
+     * instance variables mentioned above.
+     *
+     * @return String
+     */
+    @Override
+    public String toString() {
+        return getColor() + " Crossbody Bag with " + this.numberOfStraps + " straps (" + getNumberOfContents() + " / " +
+                getCapacity() + ")";
+    }
+    /**
+     * Increase the capacity of this bag by 1.
+     */
+    @Override
+    public void enhance() {
+        /*
+         *
+         * To call a method defined in a parent, you use super.method_name(...)
+         */
+        super.increaseCapacity(2);
+    }
+}
